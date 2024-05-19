@@ -5,10 +5,7 @@
 - Todos Manager - Susy
 
 ## Integrantes
-- Alvarado Salazar, Grace Nikole
-- Rodríguez Llanos, Renato Sebastián
-- Rosario Palomino, Diego Antonio
-- Rubio Montiel, Ignacio
+- Jamona
 
 ## Descripción del Proyecto
 - Todos Manager - Susy, tiene como objetivo principal ser una 
