@@ -1,0 +1,139 @@
+{% extends "layout.html" %} {% block body %}
+<body class="uk-height-1-1">
+	<div class="uk-vertical-align uk-text-center uk-height-1-1">
+		<div class="uk-vertical-align uk-text-center uk-height-1-1">
+			<div class="uk-background-secondary uk-light uk-padding uk-panel">
+				<h3>Susy - Todos Manager</h3>
+			</div>
+
+			<div
+				class="uk-grid-collapse uk-child-width-expand@s uk-text-center"
+				uk-grid
+			>
+				<div>
+					<div class="uk-background-muted uk-padding">	
+						<p class="uk-h4 uk-margin-remove">Login</p>
+					</div>
+					<form class="uk-padding" id="login">
+						<div class="uk-margin">
+							<div class="uk-inline">
+								<span
+									class="uk-form-icon uk-form-icon-flip"
+									uk-icon="icon: user"
+								></span>
+								<input
+									id="username_login"
+									name="username_login"
+									placeholder="Username"
+									class="uk-input"
+									type="text"
+									required
+								/>
+							</div>
+						</div>
+
+						<div class="uk-margin">
+							<div class="uk-inline">
+								<span
+									class="uk-form-icon uk-form-icon-flip"
+									uk-icon="icon: lock"
+								></span>
+								<input
+									id="password_login"
+									name="password_login"
+									placeholder="Password"
+									class="uk-input"
+									type="password"
+									required
+								/>
+							</div>
+            </div>
+            <div id="badpass_login" class="hidden">
+              *This password is incorrect
+            </div>
+						<div id="baduser_login" class="hidden">
+							* The username doesn't exist or password doesn't not match
+						</div>
+						<input
+							type="submit"
+							class="uk-button uk-button-secondary"
+							value="Login"
+						/>
+					</form>
+				</div>
+				<div>
+					<div class="uk-background-primary uk-padding uk-light">
+						<p class="uk-h4 uk-margin-remove">Register</p>
+					</div>
+					<form class="uk-padding" id="createuser">
+						<div class="uk-margin">
+							<div class="uk-inline">
+								<span
+									class="uk-form-icon uk-form-icon-flip"
+									uk-icon="icon: user"
+								></span>
+								<input
+									id="username_reg"
+									name="username_reg"
+									placeholder="Username"
+									class="uk-input"
+									type="text"
+									required
+								/>
+							</div>
+						</div>
+
+						<div class="uk-margin">
+							<div class="uk-inline">
+								<span
+									class="uk-form-icon uk-form-icon-flip"
+									uk-icon="icon: mail"
+								></span>
+								<input
+									id="email"
+									placeholder="Email"
+									class="uk-input"
+									onkeyup="validEmail(this)"
+									name="email"
+									type="text"
+									required
+								/>
+							</div>
+						</div>
+
+						<div class="uk-margin">
+							<div class="uk-inline">
+								<span
+									class="uk-form-icon uk-form-icon-flip"
+									uk-icon="icon: lock"
+								></span>
+								<input
+									id="password_reg"
+									name="password_reg"
+									placeholder="Password"
+									class="uk-input"
+									type="password"
+									required
+								/>
+							</div>
+						</div>
+						<div id="baduser_register" class="hidden">
+							*That user already exists
+						</div>
+						<div id="bademail_register" class="hidden">*Invalid email</div>
+						<div id="sucesscreate" class="hidden">
+							¡User was created successfully!
+						</div>
+						<input
+							type="submit"
+							class="uk-button uk-button-secondary"
+							value="Register"
+						/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="{{url_for('static', filename = 'js/login.js')}}"></script>
+{% endblock %}

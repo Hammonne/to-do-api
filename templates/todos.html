@@ -1,0 +1,129 @@
+{% extends "layout.html" %} {% block body %}
+<body>
+	<div class="uk-vertical-align uk-text-center uk-height-1-1">
+		<div class="uk-vertical-align uk-text-center uk-height-1-1">
+			<nav class="uk-navbar-containe susy_navbar" uk-navbar>
+				<div class="uk-navbar-left">
+					<ul class="uk-navbar-nav">
+						<li class="uk-active uk-navbar-item">
+							<h3 id="table_id" class="uk-margin-remove susy_white" data-curr_table_id={{tableid}}>Your Susy Todos</h3>
+						</li>
+					</ul>
+				</div>
+				<div class="uk-navbar-right">
+					<ul class="uk-navbar-nav">
+							<li class="susy_white" uk-toggle="target: #offcanvas-nav">
+								<a class="uk-text-bold">
+									Tables
+								</a>
+							</li>
+							<li class="uk-active">
+								<a href="/">
+									<button class="uk-button uk-button-default susy_white">Log Out</button>
+								</a>
+							</li>
+					</ul>
+				</div>
+			</nav>
+
+			<div id="offcanvas-nav" uk-offcanvas="overlay: true">
+				<div class="uk-offcanvas-bar">
+					<ul class="uk-nav uk-nav-default">
+						<li class="uk-nav-header">Tables</li>
+						<form id="form_table">
+							<input type="text" id="table" name="table" data-id_user="{{data}}" />
+							<input type="submit" value="Create a table" class="uk-button uk-button-small back_black_imp uk-margin-small-top" />
+						</form>
+						<li class="uk-nav-divider"></li>
+						{% for table in tables %}
+						<li class="uk-flex uk-flex-center uk-flex-middle">
+							<a href="/{{data}}/{{table.name}}/{{table.id}}/todos/">
+								<span class="uk-margin-small-right" data-id_table="{{table.id}}">
+									{{ table.name }}  
+								</span>
+							</a>
+							<div class="table_options">
+								<i class="fas fa-times table_remove" data-table_id="{{table.id}}"></i>
+							</div>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			<div >
+			<div class="uk-column-1-2">
+				<div>
+					<form class="ftodo" id="ftodo">
+						<input
+							class="uk-input uk-form-width-medium"
+							type="text"
+							id="description"
+							data-id_user="{{data}}"
+							name="description"
+							placeholder="Task"
+							required
+						/>
+						<input
+							id="add"
+							type="submit"
+							value="Add"
+							class="uk-button uk-button-default"
+						/>
+						<br>
+						<label for="deadline"> Deadline date:</label>
+						<div class="uk-inline uk-margin">
+							<input
+								id="deadline"
+								class="uk-input"
+								type="date"
+							/>
+						</div>
+					</form>
+				</div>
+				
+				<div>
+					<form class="ftodo uk-padding-large" id="form_share">
+						<input
+							class="uk-input uk-form-width-medium"
+							type="text"
+							id="shared_username"
+							data-id_user="{{data}}"
+							name="username"
+							placeholder="username"
+							required
+						/>
+						<input
+							id="share"
+							type="submit"
+							value="share"
+							class="uk-button uk-button-default"
+						/>
+					</form>
+				</div>
+			</div>
+			
+
+			<div class="uk-overflow-auto uk-padding-large uk-padding-remove-top uk-padding-remove-bottom">
+				<table class="uk-table uk-table-small uk-table-divider ">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Task</th>
+							<th>Deadline</th>
+							<th>Status</th>
+							<th>Created</th>
+							<th>Options</th>
+						</tr>
+					</thead>
+					<tbody id="tasks">
+						<tr class="row_table">
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</body>
+<script src="{{url_for('static', filename = 'js/todos.js')}}"></script>
+<script src="{{url_for('static', filename = 'js/tablero.js')}}"></script>
+<script src="{{url_for('static', filename = 'js/share.js')}}"></script>
+{% endblock %}

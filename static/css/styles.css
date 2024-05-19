@@ -1,0 +1,69 @@
+.error {
+	color: red;
+}
+
+.body {
+	font-family: "Roboto", sans-serif;
+	height: 100%;
+}
+
+.hidden {
+	display: none;
+}
+
+.header {
+	text-align: center;
+}
+
+.susy_navbar {
+	background: black;
+}
+
+.uk-button-default.susy_white,
+.susy_white {
+	color: white;
+}
+
+.ftodo {
+	margin-top: 2rem;
+}
+
+.uk-button-default.susy_white:focus,
+.uk-button-default.susy_white:hover {
+	color: white;
+}
+
+.far.fa-edit,
+.far.fa-trash-alt {
+	cursor: pointer;
+}
+
+.title {
+	text-align: center;
+}
+
+.ftodo,
+.error,
+.todosli,
+.b {
+	text-align: center;
+}
+
+.row_table{
+	text-align: left;
+}
+
+.back_black_imp {
+	background: #000 !important;
+	color: #fff;
+}
+
+.table_options {
+	position: absolute;
+	right: 0;
+	padding-right: 4rem;
+}
+
+.table_options i {
+	margin: 2px;
+}
