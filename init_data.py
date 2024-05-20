@@ -3,8 +3,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 connection = psycopg2.connect(
     database = "todosdb",
-    user = "postgres",
-    password = "jamona",
+    user = "adminTodo",
+    password = "to-do123",
 )
 
 cursor = connection.cursor()

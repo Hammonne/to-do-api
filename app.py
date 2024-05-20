@@ -8,10 +8,10 @@ import psycopg2
 
 connection = connection = psycopg2.connect(
 	database = "todosdb", 
-	user = "postgres", 
-	password = "jamona",
+	user = "adminTodo", 
+	password = "to-do123",
 	port="5432",
-	host="localhost")
+	host="database-3.ciwvjt7kpguc.us-east-1.rds.amazonaws.com")
 # connection = connection = psycopg2.connect(database = "todosdb", user = "rrodriguez", password = "1234")
 cursor = connection.cursor()
 

@@ -6,7 +6,7 @@ import datetime
 import psycopg2
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:jamona@localhost:5432/todosdb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://adminTodo:to-do123@database-3.ciwvjt7kpguc.us-east-1.rds.amazonaws.com:5432/todosdb'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://rrodriguez:1234@localhost:5432/todosdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
