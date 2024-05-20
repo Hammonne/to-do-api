@@ -34,7 +34,7 @@ def signup():
 		elif eml_count > 0:
 			return render_template('login.html')
 		else:
-			encrypt_pass = generate_password_hash(password, "sha256")
+			encrypt_pass = generate_password_hash(password, "pbkdf2:sha256")
 
 			cursor.execute("select max(id) from usr;")
 			id_max = cursor.fetchone()[0]
@@ -383,4 +383,4 @@ def error_ocurred(error):
   return render_template('page_not_found.html'), 500
 
 if __name__ == '__main__':
-	app.run(debug=True, port=5001)
+	app.run(debug=False,host='0.0.0.0', port=5001)
